@@ -1,6 +1,6 @@
 import { Card } from "./Card";
 
-export function CardGrid({ cards }) {
+export function CardGrid({ cards, onCardClick }) {
   return (
     <ul className="card-grid">
       {cards.map((card) => (

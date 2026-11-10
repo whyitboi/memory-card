@@ -55,14 +55,17 @@ export function App() {
 
   function handleCardClick(id) {
     if (clickedIds.includes(id)) {
-      //game over
+      setClickedIds([]);
+      setScore(0);
     } else {
       setClickedIds([...clickedIds, id]);
-      setScore((score) => score + 1);
+      const newScore = score + 1;
+      setScore(newScore);
       if (score > bestScore) {
-        setBestScore(score);
+        setBestScore(newScore);
       }
     }
+    setPokemon(shuffle(pokemon));
   }
 
   if (error !== null) return <p>{error}</p>;
