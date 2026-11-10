@@ -1,17 +1,48 @@
-# React + Vite
+# Memory Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A memory game built with React. Click each card only once: the cards shuffle after every click, and clicking the same card twice ends your run. See how many you can remember in a row.
 
-Currently, two official plugins are available:
+**Live demo:** [add your link once deployed]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Screenshot of the game](screenshot.png)
 
-## React Compiler
+## How to play
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Click any card to score a point.
+- After each click, the cards shuffle into a new order.
+- Click a card you've already chosen and your score resets to 0.
+- Your best score is kept so you can try to beat it.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# react-app
+- Current score and best score
+- Cards shuffle on every click and when the game first loads
+- Card images and names fetched from [add the API you use, e.g. PokéAPI or Giphy]
+- Responsive layout for phones, tablets and desktops
+
+## Built with
+
+- [React](https://react.dev/) (`useState`, `useEffect`)
+- [Vite](https://vite.dev/)
+- CSS
+
+## Running it locally
+
+```
+git clone https://github.com/whyitboi/memory-card.git
+cd memory-card
+npm install
+npm run dev
+```
+
+Then open the address Vite prints, usually `http://localhost:5173`.
+
+| Command           | What it does                                  |
+| ----------------- | --------------------------------------------- |
+| `npm run dev`     | Starts the development server                 |
+| `npm run build`   | Creates the production build in `dist/`       |
+| `npm run preview` | Serves the production build locally to test it |
+
+## About this project
+
+This is [The Odin Project's Memory Card project](https://www.theodinproject.com/lessons/node-path-react-new-memory-card) from the React course.
