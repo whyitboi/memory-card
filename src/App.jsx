@@ -65,17 +65,31 @@ export function App() {
       if (newScore > bestScore) {
         setBestScore(newScore);
       }
+      if (newScore === pokemon.length) {
+        alert("You win");
+        setClickedIds([]);
+        setScore(0);
+      }
+      setPokemon(shuffle(pokemon));
     }
-    setPokemon(shuffle(pokemon));
   }
 
   if (error !== null) return <p>{error}</p>;
   if (pokemon === null) return <p>Loading...</p>;
 
   return (
-    <main>
-      <Scoreboard score={score} bestScore={bestScore} />
-      <CardGrid cards={pokemon} onCardClick={handleCardClick} />
-    </main>
+    <>
+      <header>
+        <h1>Pokemon Memory</h1>
+        <p>
+          Get points by clicking a card - but don't click any card more than
+          once
+        </p>
+      </header>
+      <main>
+        <Scoreboard score={score} bestScore={bestScore} />
+        <CardGrid cards={pokemon} onCardClick={handleCardClick} />
+      </main>
+    </>
   );
 }
