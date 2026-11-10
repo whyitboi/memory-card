@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { CardGrid } from "./components/CardGrid";
+import { Scoreboard } from "./components/Scoreboard";
 import { shuffle } from "./utils/shuffle";
 
 export function App() {
@@ -61,7 +62,7 @@ export function App() {
       setClickedIds([...clickedIds, id]);
       const newScore = score + 1;
       setScore(newScore);
-      if (score > bestScore) {
+      if (newScore > bestScore) {
         setBestScore(newScore);
       }
     }
@@ -71,5 +72,10 @@ export function App() {
   if (error !== null) return <p>{error}</p>;
   if (pokemon === null) return <p>Loading...</p>;
 
-  return <CardGrid cards={pokemon} onCardClick={handleCardClick} />;
+  return (
+    <main>
+      <Scoreboard score={score} bestScore={bestScore} />
+      <CardGrid cards={pokemon} onCardClick={handleCardClick} />
+    </main>
+  );
 }
