@@ -2,7 +2,7 @@
 
 A memory game built with React. Click each card only once: the cards shuffle after every click, and clicking the same card twice ends your run. See how many you can remember in a row.
 
-**Live demo:** [add your link once deployed]
+**Live demo:** [link here]
 
 ![Screenshot of the game](screenshot.png)
 
@@ -17,7 +17,7 @@ A memory game built with React. Click each card only once: the cards shuffle aft
 
 - Current score and best score
 - Cards shuffle on every click and when the game first loads
-- Card images and names fetched from [add the API you use, e.g. PokéAPI or Giphy]
+- Card images and names fetched from PokéAPI
 - Responsive layout for phones, tablets and desktops
 
 ## Built with
@@ -37,10 +37,10 @@ npm run dev
 
 Then open the address Vite prints, usually `http://localhost:5173`.
 
-| Command           | What it does                                  |
-| ----------------- | --------------------------------------------- |
-| `npm run dev`     | Starts the development server                 |
-| `npm run build`   | Creates the production build in `dist/`       |
+| Command           | What it does                                   |
+| ----------------- | ---------------------------------------------- |
+| `npm run dev`     | Starts the development server                  |
+| `npm run build`   | Creates the production build in `dist/`        |
 | `npm run preview` | Serves the production build locally to test it |
 
 ## About this project
