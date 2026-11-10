@@ -9,6 +9,7 @@ export function App() {
   const [clickedIds, setClickedIds] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [message, setMessage] = useState("");
 
   //useEffect to handle the fetching side effect
   //empty dependency array
@@ -56,10 +57,11 @@ export function App() {
 
   function handleCardClick(id) {
     if (clickedIds.includes(id)) {
-      alert("Oops, You Already Clicked that");
+      setMessage("Oops, You Already Clicked that");
       setClickedIds([]);
       setScore(0);
     } else {
+      setMessage("");
       setClickedIds([...clickedIds, id]);
       const newScore = score + 1;
       setScore(newScore);
@@ -67,7 +69,7 @@ export function App() {
         setBestScore(newScore);
       }
       if (newScore === pokemon.length) {
-        alert("You win");
+        setMessage("You win");
         setClickedIds([]);
         setScore(0);
       }
@@ -89,6 +91,9 @@ export function App() {
       </header>
       <main>
         <Scoreboard score={score} bestScore={bestScore} />
+        <p className="message" aria-live="polite">
+          {message}
+        </p>
         <CardGrid cards={pokemon} onCardClick={handleCardClick} />
       </main>
     </>
