@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { CardGrid } from "./components/CardGrid";
+import { shuffle } from "./utils/shuffle";
 
 export function App() {
   const [pokemon, setPokemon] = useState(null);
@@ -33,7 +34,7 @@ export function App() {
           image: data.sprites.other["official-artwork"].front_default,
         }));
         if (!ignore) {
-          setPokemon(cards);
+          setPokemon(shuffle(cards));
         }
       } catch (error) {
         setError(error.message);
