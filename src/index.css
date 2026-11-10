@@ -46,6 +46,10 @@ header p {
   border: 1px solid var(--borderColor);
   font-weight: 600;
 }
+.scoreboard p:last-child {
+  background: #fde68a;
+  border-color: transparent;
+}
 .message {
   min-height: 1.5rem;
   margin: 1rem 0 0;
