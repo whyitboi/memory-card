@@ -5,6 +5,9 @@ import { shuffle } from "./utils/shuffle";
 export function App() {
   const [pokemon, setPokemon] = useState(null);
   const [error, setError] = useState(null);
+  const [clickedIds, setClickedIds] = useState([]);
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   //useEffect to handle the fetching side effect
   //empty dependency array
@@ -50,8 +53,20 @@ export function App() {
     };
   }, []);
 
+  function handleCardClick(id) {
+    if (clickedIds.includes(id)) {
+      //game over
+    } else {
+      setClickedIds([...clickedIds, id]);
+      setScore((score) => score + 1);
+      if (score > bestScore) {
+        setBestScore(score);
+      }
+    }
+  }
+
   if (error !== null) return <p>{error}</p>;
   if (pokemon === null) return <p>Loading...</p>;
 
-  return <CardGrid cards={pokemon} />;
+  return <CardGrid cards={pokemon} onCardClick={handleCardClick} />;
 }

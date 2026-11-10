@@ -5,7 +5,11 @@ export function CardGrid({ cards }) {
     <ul className="card-grid">
       {cards.map((card) => (
         <li key={card.id}>
-          <Card key={card.id} name={card.name} image={card.image} />
+          <Card
+            name={card.name}
+            image={card.image}
+            onClick={() => onCardClick(card.id)}
+          />
         </li>
       ))}
     </ul>
