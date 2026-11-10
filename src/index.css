@@ -1,6 +1,7 @@
 img {
   width: 100%;
   max-width: 10rem;
+  aspect-ratio: 1;
 }
 .card-grid {
   display: grid;
@@ -9,4 +10,14 @@ img {
   padding: 0;
 }
 .card-grid button {
+  width: 100%;
+  background: white;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  /* box-shadow: ; */
+}
+
+.card-grid button:hover {
+  transform: translateY(-4px);
+  /* transition: ; */
 }
