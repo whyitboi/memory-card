@@ -56,6 +56,7 @@ export function App() {
 
   function handleCardClick(id) {
     if (clickedIds.includes(id)) {
+      alert("Oops, You Already Clicked that");
       setClickedIds([]);
       setScore(0);
     } else {
@@ -70,8 +71,8 @@ export function App() {
         setClickedIds([]);
         setScore(0);
       }
-      setPokemon(shuffle(pokemon));
     }
+    setPokemon(shuffle(pokemon));
   }
 
   if (error !== null) return <p>{error}</p>;
