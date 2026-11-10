@@ -1,8 +1,8 @@
 export function Card({ name, image }) {
   return (
-    <button>
+    <button type="button">
       <img alt={name} src={image} />
-      {name}
+      <span>{name}</span>
     </button>
   );
 }

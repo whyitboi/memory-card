@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import { CardGrid } from "./components/CardGrid";
 
 export function App() {
   const [pokemon, setPokemon] = useState(null);
@@ -52,11 +52,5 @@ export function App() {
   if (error !== null) return <p>{error}</p>;
   if (pokemon === null) return <p>Loading...</p>;
 
-  return (
-    <ul>
-      {pokemon.map((card) => (
-        <li key={card.id}>{card.name}</li>
-      ))}
-    </ul>
-  );
+  return <CardGrid cards={pokemon} />;
 }
