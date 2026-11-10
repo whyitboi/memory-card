@@ -54,9 +54,9 @@ export function App() {
 
   return (
     <ul>
-      {pokemon.map((card) => {
-        <li key={card.id}>{card.name}</li>;
-      })}
+      {pokemon.map((card) => (
+        <li key={card.id}>{card.name}</li>
+      ))}
     </ul>
   );
 }
