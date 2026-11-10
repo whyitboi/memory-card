@@ -1,3 +1,24 @@
+:root {
+  background: #f6f5f1;
+  line-height: 1.5;
+  color: #1f2937;
+}
+body {
+  margin: 0;
+}
+header,
+main {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+}
+header {
+  padding-block: 2.5rem 1rem;
+  text-align: center;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+}
 img {
   width: 100%;
   aspect-ratio: 1;
@@ -21,12 +42,13 @@ img {
   box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
   transition:
     transform 0.15s ease,
-    box-shadow 0.15 ease;
+    box-shadow 0.15s ease;
 }
 .card-grid button:hover {
   transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 0.2);
 }
 .card-grid button:focus-visible {
-  outline: 3px solid grey;
+  outline: 3px solid #facc15;
   outline-offset: 2px;
 }

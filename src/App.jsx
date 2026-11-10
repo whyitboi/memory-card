@@ -83,7 +83,9 @@ export function App() {
   return (
     <>
       <header>
-        <h1>Pokemon Memory</h1>
+        <h1>
+          Pokemon <span>Memory</span>
+        </h1>
         <p>
           Get points by clicking a card - but don't click any card more than
           once
