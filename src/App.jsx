@@ -17,24 +17,24 @@ export function App() {
     async function fetchPokemon() {
       try {
         const response = pokemons.map((number) => {
-          fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then((res) => {
-            if (!res.ok) {
-              throw new Error(`Request failed: ${response.status}`);
-            }
-            return res.json();
-          });
+          return fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then(
+            (res) => {
+              if (!res.ok) {
+                throw new Error(`Request failed: ${res.status}`);
+              }
+              return res.json();
+            },
+          );
         });
         const results = await Promise.all(response);
-
-        results.map((data) => {
-          if (!ignore) {
-            setPokemon({
-              id: data.id,
-              name: data.name,
-              image: data.sprites.other["official-artwork"].front_default,
-            });
-          }
-        });
+        const cards = results.map((data) => ({
+          id: data.id,
+          name: data.name,
+          image: data.sprites.other["official-artwork"].front_default,
+        }));
+        if (!ignore) {
+          setPokemon(cards);
+        }
       } catch (error) {
         setError(error.message);
       }
@@ -52,5 +52,11 @@ export function App() {
   if (error !== null) return <p>{error}</p>;
   if (pokemon === null) return <p>Loading...</p>;
 
-  return <p>{pokemon.name}</p>;
+  return (
+    <ul>
+      {pokemon.map((card) => {
+        <li key={card.id}>{card.name}</li>;
+      })}
+    </ul>
+  );
 }
