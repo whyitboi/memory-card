@@ -17,7 +17,7 @@ A memory game built with React. Click each card only once: the cards shuffle aft
 
 - Current score and best score
 - Cards shuffle on every click and when the game first loads
-- Card images and names fetched from PokéAPI
+- Card images and names fetched from [PokéAPI](https://pokeapi.co/)
 - Responsive layout for phones, tablets and desktops
 
 ## Built with
