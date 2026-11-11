@@ -77,7 +77,7 @@ export function App() {
     setPokemon(shuffle(pokemon));
   }
 
-  if (error !== null) return <p>{error}</p>;
+  if (error !== null) return <p className="status">{error}</p>;
   if (pokemon === null) return <p className="status">Loading...</p>;
 
   return (
