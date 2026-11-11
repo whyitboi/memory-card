@@ -2,10 +2,11 @@
   --pageColor: #f6f5f1;
   --cardColor: #ffffff;
   --standOut: #c2410c;
-  --borderColor: ##e7e5e4;
+  --borderColor: #e7e5e4;
   --textColor: #1f2937;
   background: var(--pageColor);
   line-height: 1.5;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
   color: var(--textColor);
 }
 body {
