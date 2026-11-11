@@ -2,7 +2,7 @@
 
 A memory game built with React. Click each card only once: the cards shuffle after every click, and clicking the same card twice ends your run. See how many you can remember in a row.
 
-**Live demo:** [link here]
+**Live demo:** [link here](https://memory-card-two-lovat.vercel.app/)
 
 ![Screenshot of the game](screenshot.png)
 
