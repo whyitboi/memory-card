@@ -12,6 +12,16 @@
 body {
   margin: 0;
 }
+.status {
+  min-height: 100vh;
+  /*to handle phone screens that
+  have addressbar at the top*/
+  min-height: 100dvh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
 header,
 main {
   width: min(100% - 2rem, 60rem);

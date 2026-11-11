@@ -46,7 +46,7 @@ export function App() {
       }
     }
 
-    //function call
+    //async function call
     fetchPokemon();
 
     //clean-up function
@@ -78,7 +78,7 @@ export function App() {
   }
 
   if (error !== null) return <p>{error}</p>;
-  if (pokemon === null) return <p>Loading...</p>;
+  if (pokemon === null) return <p className="status">Loading...</p>;
 
   return (
     <>
